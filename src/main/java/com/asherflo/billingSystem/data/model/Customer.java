@@ -7,10 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
@@ -19,7 +16,8 @@ import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @Builder
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Validated
@@ -42,7 +40,7 @@ public class Customer {
     @Column(unique = true,name = "email")
     private  String Email;
 
-    @Column(name = "password",nullable = false)
+    @Column(unique = true,nullable = false)
     private  String  password;
 
     @Column(name = "gender")

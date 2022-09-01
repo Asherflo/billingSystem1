@@ -1,4 +1,4 @@
-package com.asherflo.billingSystem.requests;
+package com.asherflo.billingSystem.requestsAndResponses;
 
 import com.asherflo.billingSystem.data.model.enums.Gender;
 import lombok.Getter;
